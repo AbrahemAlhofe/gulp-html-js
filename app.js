@@ -13,8 +13,8 @@ var gulpHtmlJs = function() {
       var result = content
 
       for (let match of matches) {
-        var matchWithoutWhiteSpaces = match.replace(/\s/g,'')
-        result = result.replace(match, '"' + matchWithoutWhiteSpaces + '"')
+        var match_ = match.replace(/\n/g,'').replace(/(")/g, '\\$1').replace(/> +</g, '><')
+        result = result.replace(match, '"' + match_ + '"')
       }
 
       var aFile = new gutil.File();

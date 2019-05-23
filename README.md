@@ -29,9 +29,12 @@ gulp.task("default", function () {
 ### app js
 
 ```
-var app = {
-  name : 'navBar',
-  template : <div id="navbar" class='pink center'><div>
+var obj = () => {
+  temple : <div class="active">
+            <span v-bind:class='pink'>
+              hello {{name}} are you okay
+            </span>
+           </div>
 }
 ```
 after run gulp
@@ -42,9 +45,8 @@ after run gulp
 ### app js
 
 ```
-var app = {
-  name : 'navBar',
-  template : "<div id=\"navbar\" class='pink center'><div>"
+var obj = () => {
+  temple : "<div class=\"active\"><span v-bind:class='pink'>hello {{name}} are you okay</span></div>"
 }
 ```
 
