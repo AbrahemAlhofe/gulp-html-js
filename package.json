@@ -1,6 +1,6 @@
 {
   "name": "gulp-html-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "plugin gulp transform html in javascript to string",
   "main": "app.js",
   "scripts": {
@@ -11,6 +11,10 @@
     "html",
     "js"
   ],
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/AbrahemAlhofe/gulp-html-js.git"
+  },
   "author": "abrahem ali alhofe",
   "license": "MIT",
   "dependencies": {},
