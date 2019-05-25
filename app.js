@@ -12,14 +12,17 @@ var gulpHtmlJs = function() {
       var matches = content.match(regex)
       var result = content
 
-      for (let match of matches) {
-        var match_ = match.replace(/\n/g,'').replace(/(")/g, '\\$1').replace(/> +</g, '><')
-        result = result.replace(match, '"' + match_ + '"')
-      }
+      if (content.test(regex)) {
+        for (let match of matches) {
+          var match_ = match.replace(/\n/g,'').replace(/(")/g, '\\$1').replace(/> +</g, '><')
+          result = result.replace(match, '"' + match_ + '"')
+        }
 
-      var aFile = new gutil.File();
-      aFile.path = file.path;
-      aFile.contents = Buffer.from(result)
+        var aFile = new gutil.File();
+        aFile.path = file.path;
+        aFile.contents = Buffer.from(result)
+      }
+      
       callback(null, new File(aFile))
     });
 };

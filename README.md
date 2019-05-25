@@ -1,4 +1,4 @@
-# gulp-html-js v1.0.2
+# gulp-html-js v1.0.3
 
 gulp plugin to make transform html in file javascript to string
 ## Installation
@@ -50,7 +50,7 @@ var obj = () => {
 }
 ```
 
-
+NOTE : if not any html in the file plugin return file without any edit
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

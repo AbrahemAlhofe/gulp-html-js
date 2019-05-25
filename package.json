@@ -1,6 +1,6 @@
 {
   "name": "gulp-html-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "plugin gulp transform html in javascript to string",
   "main": "app.js",
   "scripts": {
