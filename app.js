@@ -12,9 +12,9 @@ var gulpHtmlJs = function() {
       var matches = content.match(regex)
       var result = content
 
-      if (content.test(regex)) {
+      if (regex.test(content)) {
         for (let match of matches) {
-          var match_ = match.replace(/\n/g,'').replace(/(")/g, '\\$1').replace(/> +</g, '><')
+          var match_ = match.replace(/\n/g,'').replace(/(")/g, '\\$1').replace(/> +/g, '>').replace(/ +</g, '<')
           result = result.replace(match, '"' + match_ + '"')
         }
 
@@ -22,7 +22,7 @@ var gulpHtmlJs = function() {
         aFile.path = file.path;
         aFile.contents = Buffer.from(result)
       }
-      
+
       callback(null, new File(aFile))
     });
 };
