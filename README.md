@@ -1,4 +1,4 @@
-# gulp-html-js v1.0.4
+# gulp-html-js v1.1.0
 
 gulp plugin to make transform html in file javascript to string
 ## Installation
@@ -34,7 +34,8 @@ var app = {
               <span v-bind:class='pink'>
                 hello {{name}} are you okay
               </span>
-             </div>
+             </div>,
+  name : "test"
 }
 ```
 after run gulp
@@ -46,7 +47,8 @@ after run gulp
 
 ```
 var app = {
-  template : "<div class=\"active\"><span v-bind:class='pink'>hello {{name}} are you okay</span></div>"
+  template : "<div class=\"active\"><span v-bind:class='pink'>hello {{name}} are you okay</span></div>",
+  name : "test"
 }
 ```
 
