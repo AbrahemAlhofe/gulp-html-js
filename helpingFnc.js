@@ -9,7 +9,7 @@ module.exports = {
     return new File(aFile)
   },
   filter : (string) => {
-    var string_ = string.replace(/(")/g, '\\$1').replace(/ +</g, '<').replace(/>\n? */g, '>').replace(/\n/g,'')
+    var string_ = string.replace(/(")/g, '\\$1').replace(/\s+</g, '<').replace(/>\n?\s+/g, '>').replace(/\n/g,'')
     return '"' + string_ + '"'
   }
 }

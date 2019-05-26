@@ -1,4 +1,4 @@
-# gulp-html-js v1.1.0
+# gulp-html-js v1.1.1
 
 gulp plugin to make transform html in file javascript to string
 ## Installation
