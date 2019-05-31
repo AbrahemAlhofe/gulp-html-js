@@ -8,14 +8,20 @@ var result, content
 var gulpHtmlJs = function() {
     return through.obj(function (file, enc, callback) {
       result = content = file.contents.toString();
+      ////////////////////////////////////
+      var tags = helping.getTags(content)
+      var matches = helping.getHtml(tags)
+      var names = helping.getName(matches)
+      ///////////////////////////////////
 
-      var regex = new RegExp(`(?<= )<(\\w+) ?.*>[\\n\\s\\w\\W]*</\\1>`, 'g');
-      var matches = content.match(regex)
-
-      if (regex.test(content)) {
-        for (let match of matches) {
-          result = result.replace(match, helping.filter(match))
-        }
+      if (matches.length !== 0) {
+        matches.forEach((match, i) => {
+          result = result.replace(match, "")
+        })
+        matches.forEach((match, i) => {
+          result = result.replace('@'+names[i], helping.convert(match))
+        })
+        result = result.replace(new RegExp('^\\s+\\n', 'gm'), '\n')
       }
 
       callback(null, helping.createFile(file, result))
